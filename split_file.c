@@ -1,9 +1,9 @@
 #include "monty.h"
-char *value;
+
 /**
  * split_file - cut the words in string with strtok.
  * @content_file: is the content in the file.
- *
+ * @stack_list: is the stack.
  * Return: Nothing.
  */
 void split_file(char *content_file, stack_t **stack_list)
