@@ -44,7 +44,7 @@ typedef struct instruction_s
 
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
-
+void _nop(stack_t **stack, unsigned int line_number);
 void option_file(char *, unsigned int, stack_t **stack_list);
 void openfile(char *);
 void split_file(char *);
