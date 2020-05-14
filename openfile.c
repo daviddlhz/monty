@@ -2,12 +2,11 @@
 
 /**
  * openfile - function that reads a text file and prints
- *
+ *@FILENAME: is the rute of monty file
  * Return: Reading the file
  */
-void openfile(void)
+void openfile(char *FILENAME)
 {
-	/* Open the file for reading */
 	char *line_buf = NULL;
 	size_t line_buf_size = 0;
 	int line_count = 0;
@@ -16,29 +15,28 @@ void openfile(void)
 
 	if (!fp)
 	{
-		fprintf(stderr, "Error opening file '%s'\n", FILENAME);
+		fprintf(stderr, "Error: Can't open file <%s>\n", FILENAME);
+		exit(EXIT_FAILURE);
 	}
 
-	/* Get the first line of the file. */
 	line_size = getline(&line_buf, &line_buf_size, fp);
 
-	/* Loop through until we are done with the file. */
 	while (line_size >= 0)
 	{
-		/* Increment our line count */
 		line_count++;
-
-		/* Show the line details */
-		printf("%s", line_buf);
-
-		/* Get the next line */
+		split_file(line_buf);
 		line_size = getline(&line_buf, &line_buf_size, fp);
+
+		if (!line_buf)
+		{
+			printf("Error: malloc failed\n");
+			fclose(fp);
+			exit(EXIT_FAILURE);
+		}
 	}
 
-	/* Free the allocated line buffer */
 	free(line_buf);
 	line_buf = NULL;
 
-	/* Close the file now that we are done with it */
 	fclose(fp);
 }
