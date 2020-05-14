@@ -14,6 +14,7 @@ void option_file(char *option, unsigned int line_ins, stack_t **stack_list)
 	instruction_t op_option[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 

@@ -29,10 +29,9 @@ void free_stack_list(stack_t **stack_list)
 	}
 }
 /**
- * _push - The opcode push pushes an element to the stack.
- * @stack: doubly linked list representation of a stack (or queue)
- * @line_number: currently line number in the file.
- * Return: Void.
+ * _push - add in the stack
+ * @stack: struct of the doubly linked list
+ * @line_number: number of the line in the file.
  */
 
 void _push(stack_t **stack, unsigned int line_number)
@@ -68,7 +67,7 @@ void _push(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * _pall - print the value in the nodo
+ * _pall - print the stack
  * @stack: struct of the doubly linked list
  * @line_number: number of the line in the file.
  */
@@ -83,4 +82,19 @@ void _pall(stack_t **stack, unsigned int line_number)
 		tmp = tmp->next;
 	}
 	printf("PALL\n");
+}
+
+#include "monty.h"
+
+
+/**
+ * _nop - doesn’t do anything
+ * @stack: struct of the doubly linked list
+ * @line_number: number of the line in the file.
+ */
+
+void _nop(stack_t **stack, unsigned int line_number)
+{
+	(void) stack;
+	(void) line_number;
 }
