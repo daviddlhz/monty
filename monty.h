@@ -47,11 +47,10 @@ void free_stack_list(stack_t **stack_list);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void option_file(char *, unsigned int, stack_t **, char *);
 void openfile(char *);
-void split_file(char *, stack_t **);
-void _pop(stack_t **stack, unsigned int line_number);
 void split_file(char *, stack_t **, unsigned int);
 
 #endif
