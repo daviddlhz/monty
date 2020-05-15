@@ -17,6 +17,7 @@ void option_file(char *optn, unsigned int line, stack_t **list, char *content)
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
+		{"swap", _swap},
 		{"nop", _nop},
 		{NULL, NULL}
 	};
