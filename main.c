@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		write(2, "USAGE: monty file\n", 18);
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	FILENAME = argv[1];

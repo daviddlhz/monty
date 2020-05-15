@@ -15,8 +15,8 @@ void option_file(char *optn, unsigned int line, stack_t **list, char *content)
 	instruction_t op_option[] = {
 		{"push", _push},
 		{"pall", _pall},
-		{"pop", _pop},
 		{"pint", _pint},
+		{"pop", _pop},
 		{"nop", _nop},
 		{NULL, NULL}
 	};
@@ -32,7 +32,7 @@ void option_file(char *optn, unsigned int line, stack_t **list, char *content)
 	}
 	if (op_option[i].opcode == NULL)
 	{
-		printf("L%d: unknown instruction %s\n", line, optn);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line, optn);
 		free_stack_list(list);
 		free(content);
 		exit(EXIT_FAILURE);

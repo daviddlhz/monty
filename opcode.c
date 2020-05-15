@@ -32,7 +32,7 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	if (new == NULL)
 	{
-	write(2, "Error: malloc failed\n", 21);
+	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
 	}
 
@@ -67,27 +67,17 @@ void _pall(stack_t **stack, unsigned int line_number)
  * @line_number: number of the line in the file.
  * Return: void
  */
-
 void _pint(stack_t **stack, unsigned int line_number)
 {
-
 	stack_t *tmp = *stack;
 
 	if (*stack == NULL)
 	{
-	fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-	free_stack_list(stack);
-	exit(EXIT_FAILURE);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
 
 	}
-	*stack = (*stack)->next;
-	if (tmp->next != NULL)
-	(*stack)->prev = NULL;
-
-	else
-
-	*stack = NULL;
-	free(tmp);
+	printf("%d\n", tmp->n);
 }
 /**
  * _pop - remove a value to the stack

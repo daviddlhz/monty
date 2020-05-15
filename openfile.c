@@ -30,7 +30,7 @@ void openfile(char *FILENAME)
 
 		if (!line_buf)
 		{
-			printf("Error: malloc failed\n");
+			fprintf(stderr, "Error: malloc failed\n");
 			free_stack_list(&stack_list);
 			fclose(fp);
 			exit(EXIT_FAILURE);
