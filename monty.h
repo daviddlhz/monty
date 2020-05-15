@@ -49,5 +49,6 @@ void _nop(stack_t **stack, unsigned int line_number);
 void option_file(char *, unsigned int, stack_t **stack_list);
 void openfile(char *);
 void split_file(char *, stack_t **);
+void _pop(stack_t **stack, unsigned int line_number);
  
 #endif
