@@ -5,6 +5,7 @@
  * @stack: struct of the doubly linked list
  * @line_number: number of the line in the file.
  */
+
 void _push(stack_t **stack, unsigned int line_number)
 {
 
@@ -43,11 +44,13 @@ void _push(stack_t **stack, unsigned int line_number)
 	new->n = num;
 	*stack = new;
 }
+
 /**
  * _pall - print the stack
  * @stack: struct of the doubly linked list
  * @line_number: number of the line in the file.
  */
+
 void _pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
@@ -59,18 +62,19 @@ void _pall(stack_t **stack, unsigned int line_number)
 	}
 }
 /**
- * _pop - remove a value to the stack
+ * _pint - prints the value at the top of the stack
  * @stack: struct of the doubly linked list
  * @line_number: number of the line in the file.
+ * Return: void
  */
-void _pop(stack_t **stack, unsigned int line_number)
+
+void _pint(stack_t **stack, unsigned int line_number)
 {
 
 	stack_t *tmp = *stack;
 
 	if (*stack == NULL)
 	{
-
 	fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 	free_stack_list(stack);
 	exit(EXIT_FAILURE);
